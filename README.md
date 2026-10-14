@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Franco Di Iorio — Portfolio
 
-## Getting Started
+Portfolio personal: proyectos, stack y contacto. Construido con Next.js (App Router),
+TypeScript y Tailwind CSS, y desplegado en Vercel.
 
-First, run the development server:
+## Desarrollo
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrí [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Comando         | Qué hace                     |
+| --------------- | ---------------------------- |
+| `npm run dev`   | Servidor de desarrollo       |
+| `npm run build` | Build de producción          |
+| `npm run start` | Sirve el build de producción |
+| `npm run lint`  | ESLint                       |
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Estructura
 
-## Learn More
+```
+src/
+  app/          layout, página, imagen Open Graph y manifest
+  components/   secciones de la página (Navbar, Hero, Projects, About, Contact…)
+  data/         contenido editable: perfil, proyectos y skills
+public/
+  projects/     capturas de los proyectos
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Para sumar o editar un proyecto alcanza con tocar `src/data/portfolio.ts` y dejar la
+captura en `public/projects/`.

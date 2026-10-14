@@ -1,45 +1,63 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header/Header";
+import { profile } from "@/data/portfolio";
 
-const inter = Inter({ subsets: ["latin"] });
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const display = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+
+const description =
+  "Desarrollador Full Stack en Buenos Aires. Construyo aplicaciones web y mobile con React, TypeScript, Node y .NET.";
 
 export const metadata: Metadata = {
-  title: "Franco Di Iorio",
-  description: "Portfolio de Franco Di Iorio",
+  metadataBase: new URL(profile.siteUrl),
+  title: {
+    default: `${profile.name} — ${profile.role}`,
+    template: `%s — ${profile.name}`,
+  },
+  description,
+  authors: [{ name: profile.name, url: profile.socials.github }],
+  keywords: ["Franco Di Iorio", "Full Stack", "React", "TypeScript", "Next.js", ".NET", "Portfolio"],
   openGraph: {
-    title: "Franco Di Iorio",
-    description: "Te invito a mirar mis proyectos",
-    url: "https://portfolio-ts-sigma.vercel.app/",
-    images: [
-      {
-        url: "/perfil2.png",
-        width: 800,
-        height: 600,
-        alt: "Portfolio Franco",
-      },
+    type: "website",
+    locale: "es_AR",
+    url: "/",
+    siteName: profile.name,
+    title: `${profile.name} — ${profile.role}`,
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${profile.name} — ${profile.role}`,
+    description,
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: "#05090a",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="es" className={`${sans.variable} ${display.variable} ${mono.variable}`}>
       <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <noscript>
+          <style>{".reveal{opacity:1!important;transform:none!important}"}</style>
+        </noscript>
       </head>
-      <body className={inter.className}>
-        <Header />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
