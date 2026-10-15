@@ -36,8 +36,9 @@ export default function Contact() {
           <p className="section-label">03 · Contacto</p>
           <h2 className="section-title mt-3 sm:text-6xl">¿Trabajamos juntos?</h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-zinc-400">
-            Estoy buscando nuevos desafíos como developer. Si tenés una propuesta, un proyecto o
-            simplemente querés charlar, escribime.
+            Hoy trabajo como developer, pero siempre estoy abierto a proyectos freelance y a
+            propuestas interesantes. Si tenés una idea, un proyecto o simplemente querés charlar,
+            escribime.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
