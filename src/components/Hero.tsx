@@ -1,8 +1,6 @@
-import Image from "next/image";
 import { profile, projects } from "@/data/portfolio";
+import Avatar from "./Avatar";
 import { ArrowDownIcon, DownloadIcon, GithubIcon, LinkedinIcon, PinIcon } from "./Icons";
-
-const stack = ["React", "TypeScript", "Next.js", "Node", ".NET"];
 
 export default function Hero() {
   const liveProjects = projects.filter((project) => project.demo).length;
@@ -78,33 +76,8 @@ export default function Hero() {
           </dl>
         </div>
 
-        <div className="animate-fade-up relative mx-auto w-full max-w-[18rem] [animation-delay:200ms] sm:max-w-md lg:max-w-none">
-          <div className="relative aspect-square">
-            <div className="absolute inset-[8%] rounded-full bg-gradient-to-br from-accent/25 via-ink-800 to-ink-950 ring-1 ring-white/10" />
-            <div className="absolute inset-[2%] rounded-full border border-dashed border-white/10" />
-            <Image
-              src="/perfil2.png"
-              alt="Ilustración de Franco sosteniendo una laptop"
-              width={2448}
-              height={2064}
-              priority
-              sizes="(min-width: 1024px) 40vw, 90vw"
-              className="animate-float absolute inset-x-0 bottom-0 h-auto w-full drop-shadow-[0_0_30px_rgba(118,171,174,0.25)]"
-            />
-          </div>
-
-          <div className="absolute -left-4 bottom-[14%] hidden rounded-2xl border border-white/10 bg-ink-900/80 px-4 py-3 font-mono text-xs text-zinc-400 shadow-2xl backdrop-blur sm:block">
-            <span className="text-accent">const</span> stack = [
-            <div className="pl-4 text-zinc-200">
-              {stack.map((tech, index) => (
-                <span key={tech}>
-                  &quot;{tech}&quot;{index < stack.length - 1 ? ", " : ""}
-                  {index === 2 && <br />}
-                </span>
-              ))}
-            </div>
-            ]
-          </div>
+        <div className="animate-fade-up [animation-delay:200ms]">
+          <Avatar />
         </div>
       </div>
     </section>

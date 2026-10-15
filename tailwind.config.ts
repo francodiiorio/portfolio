@@ -37,10 +37,28 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        twinkle: {
+          "0%, 100%": { opacity: "1", transform: "scale(1) rotate(0deg)" },
+          "50%": { opacity: "0.25", transform: "scale(0.6) rotate(45deg)" },
+        },
+        pop: {
+          "0%": { opacity: "0", transform: "translateY(8px) scale(0.85)" },
+          "60%": { opacity: "1", transform: "translateY(-2px) scale(1.04)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        blink: {
+          "0%, 50%": { opacity: "1" },
+          "50.01%, 100%": { opacity: "0" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
         float: "float 7s ease-in-out infinite",
+        "spin-slow": "spin 14s linear infinite",
+        "spin-slower": "spin 40s linear infinite reverse",
+        twinkle: "twinkle 2.4s ease-in-out infinite",
+        pop: "pop 0.45s cubic-bezier(0.22, 1, 0.36, 1) both",
+        blink: "blink 1s step-end infinite",
       },
     },
   },
