@@ -15,15 +15,7 @@ export default function Hero() {
 
       <div className="container grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
-          <p className="animate-fade-up inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-xs text-zinc-300">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-emerald-400" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            Abierto a nuevas oportunidades
-          </p>
-
-          <h1 className="animate-fade-up mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-tight text-white [animation-delay:80ms] sm:text-6xl lg:text-7xl">
+          <h1 className="animate-fade-up font-display text-5xl font-semibold leading-[1.02] tracking-tight text-white [animation-delay:80ms] sm:text-6xl lg:text-7xl">
             Hola, soy Franco.
             <span className="mt-2 block bg-gradient-to-r from-accent-light via-accent to-cyan-200 bg-clip-text text-transparent">
               Construyo productos web.
