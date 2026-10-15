@@ -130,6 +130,21 @@ export const skillGroups = [
   },
 ];
 
+export const education = [
+  {
+    title: "Ingeniería en Informática",
+    place: "UCEMA · CABA",
+    status: "En curso",
+    current: true,
+  },
+  {
+    title: "Analista de Sistemas",
+    place: "Escuela ORT · CABA",
+    status: "Recibido 2024",
+    current: false,
+  },
+];
+
 export const navLinks = [
   { id: "inicio", label: "Inicio" },
   { id: "proyectos", label: "Proyectos" },

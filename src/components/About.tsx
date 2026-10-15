@@ -1,4 +1,4 @@
-import { skillGroups } from "@/data/portfolio";
+import { education, skillGroups } from "@/data/portfolio";
 import { CapIcon } from "./Icons";
 import Reveal from "./Reveal";
 
@@ -38,15 +38,33 @@ export default function About() {
             </p>
           </div>
 
-          <div className="mt-8 flex items-start gap-4 rounded-2xl border border-white/[0.08] bg-ink-950/60 p-5">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-accent/15 text-accent">
-              <CapIcon className="h-5 w-5" />
-            </span>
-            <div>
-              <p className="font-medium text-white">Analista de Sistemas</p>
-              <p className="text-sm text-zinc-400">Escuela ORT · CABA · 2022 – actualidad</p>
-            </div>
-          </div>
+          <ol className="mt-8 space-y-3">
+            {education.map((item) => (
+              <li
+                key={item.title}
+                className="flex items-start gap-4 rounded-2xl border border-white/[0.08] bg-ink-950/60 p-5"
+              >
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-accent/15 text-accent">
+                  <CapIcon className="h-5 w-5" />
+                </span>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <p className="font-medium text-white">{item.title}</p>
+                    <span
+                      className={`rounded-full px-2 py-0.5 font-mono text-[11px] ${
+                        item.current
+                          ? "bg-accent/15 text-accent-light ring-1 ring-accent/30"
+                          : "bg-white/5 text-zinc-400 ring-1 ring-white/10"
+                      }`}
+                    >
+                      {item.status}
+                    </span>
+                  </div>
+                  <p className="mt-0.5 text-sm text-zinc-400">{item.place}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </Reveal>
 
         <div className="space-y-10">
